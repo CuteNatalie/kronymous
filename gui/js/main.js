@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         proxy_port: "none",
         accessible_ports: "all",
         reachable_addresses: "all",
-        tor_port: 9999,
+        tor_port: 9050,
         theme: "dark",
         adv_opt:"none"
     }, function (items) {

@@ -14,7 +14,7 @@ var default_settings = {
     proxy_port: "none",
     autostart_tor: false,
     accessible_ports: "all",
-    tor_port: 9999,
+    tor_port: 9050,
     adv_opt:"none"
 };
 
@@ -250,7 +250,7 @@ function save_settings() {
     if (1000 < tor_port && tor_port <= 65535) {
         settings["tor_port"] = tor_port;
     } else {
-        settings["tor_port"] = 9999;
+        settings["tor_port"] = 9050;
         raise_error("invalid tor port, please enter a number between 1000-65535", 'cport__port');
     }
 
