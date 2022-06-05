@@ -2805,7 +2805,7 @@ lib.Storage.Chrome.prototype.removeItems = function(keys, opt_callback) {
  */
 lib.Storage.Local = function() {
   this.observers_ = [];
-  this.storage_ = window.localStorage;
+  this.storage_ = window.chrome.storage.local;
   window.addEventListener('storage', this.onStorage_.bind(this));
 };
 
@@ -2872,7 +2872,7 @@ lib.Storage.Local.prototype.clear = function(opt_callback) {
  *     been retrieved.
  */
 lib.Storage.Local.prototype.getItem = function(key, callback) {
-  var value = this.storage_.getItem(key);
+  var value = this.storage_.get(key, callback);
 
   if (typeof value == 'string') {
     try {
@@ -2897,7 +2897,7 @@ lib.Storage.Local.prototype.getItems = function(keys, callback) {
 
   for (var i = keys.length - 1; i >= 0; i--) {
     var key = keys[i];
-    var value = this.storage_.getItem(key);
+    var value = this.storage_.get(key, callback);
     if (typeof value == 'string') {
       try {
         rv[key] = JSON.parse(value);
