@@ -2,7 +2,7 @@
   "name": "Kronymous - Access internet via Tor Network",
   "short_name": "Kronymous",
   "description": "",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "manifest_version": 2,
   "minimum_chrome_version": "36",
   "icons": {
